@@ -86,7 +86,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="hidden lg:block">
-          {/* <AuthNavbar /> */}
+          <AuthNavbar />
         </div>
         <div className="lg:hidden">
           <Menu onClick={toggleMenu} className="h-6 w-6 cursor-pointer" />
@@ -135,7 +135,7 @@ const Navbar = () => {
                   </nav>
                 </div>
                 <div className=" mt-3">
-                  {/* <AuthNavbar /> */}
+                  <AuthNavbar />
                 </div>
               </div>
             </div>
