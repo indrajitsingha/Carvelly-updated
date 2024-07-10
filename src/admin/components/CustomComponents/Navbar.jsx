@@ -26,7 +26,7 @@ const Navbar = () => {
             } else {
                 setSession(null);
                 console.log("navbar");
-                navigate("/AdminLogin");
+                // navigate("/AdminLogin");
             }
             console.log(session);
         });
