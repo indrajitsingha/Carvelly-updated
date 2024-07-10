@@ -1,0 +1,199 @@
+body::-webkit-scrollbar {
+  display: none;
+  overflow-x: hidden;
+}
+
+a>.active {
+  background-color: rgba(11, 180, 70, 0.982);
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: large;
+
+}
+
+.adminNav>li>.active {
+  background-color: rgba(11, 10, 11, 0.982);
+  padding: 10px 20px;
+  border-radius: 10px;
+
+}
+
+.compare {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+
+.login {
+  /*
+      background: url('https://tailwindadmin.netlify.app/dist/images/login-new.jpeg');
+    */
+  background: url('https://images.unsplash.com/photo-1542228262-3d663b306a53?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.loginuser {
+  /*
+      background: url('https://tailwindadmin.netlify.app/dist/images/login-new.jpeg');
+    */
+  background: url('https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.comp {
+  /*
+      background: url('https://tailwindadmin.netlify.app/dist/images/login-new.jpeg');
+    */
+  background: url('https://successmotorsltd.com/wp-content/uploads/2022/02/re-221-1.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+
+
+/* ////spinner */
+
+
+/* Customize this preloader */
+:root {
+  --preload-color-background: white;
+  --preload-color-foreground: black;
+  --preload-color-accent: black;
+  --preload-gap: 36px;
+  --preload-icon-size: 128px;
+  --preload-font: 2em Roboto, arial, sans-serif;
+  --preload-title: 'Carvely';
+  --preload-spinner-size: 32px;
+  --preload-spinner-width: 3px;
+}
+
+#app-preloader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: var(--preload-gap);
+  justify-content: center;
+  align-items: center;
+  background: var(--preload-color-background);
+  color: var(--preload-color-foreground);
+  font: var(--preload-font);
+  transition: .3s ease-in-out;
+  color: black;
+}
+
+#app-preloader .preloader-logo {
+  width: var(--preload-icon-size);
+  height: var(--preload-icon-size);
+  color: var(--preload-color-accent);
+  filter: opacity(0);
+  animation: preloader-logo-anim .3s .5s ease-out forwards;
+}
+
+#app-preloader .preloader-title:before {
+  content: var(--preload-title);
+  filter: opacity(0);
+  animation: preloader-title-anim .3s .6s ease-out forwards;
+}
+
+#app-preloader .preloader-spinner {
+  position: fixed;
+  bottom: var(--preload-gap);
+  left: calc(50vw - calc(var(--preload-spinner-size) / 2px));
+  width: var(--preload-spinner-size);
+  height: var(--preload-spinner-size);
+  animation: preloader-spinner .5s linear infinite;
+}
+
+#app-preloader .preloader-spinner .preloader-spinner-icon {
+  width: var(--preload-spinner-size);
+  height: var(--preload-spinner-size);
+  stroke: var(--preload-color-foreground);
+  stroke-width: var(--preload-spinner-width);
+  stroke-dasharray: 314%, 314%;
+  animation: preloader-spinner-icon-anim 1s linear infinite alternate;
+}
+
+@keyframes preloader-logo-anim {
+  0% {
+    filter: opacity(0);
+    transform: translateY(-30px);
+  }
+
+  100% {
+    filter: opacity(1);
+    transform: translateY(0);
+  }
+}
+
+@keyframes preloader-title-anim {
+  0% {
+    filter: opacity(0);
+  }
+
+  100% {
+    filter: opacity(1);
+  }
+}
+
+@keyframes preloader-spinner {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes preloader-spinner-icon-anim {
+  0% {
+    stroke-dasharray: 0%, 314%;
+  }
+
+  100% {
+    stroke-dasharray: 314%, 314%;
+  }
+}
+
+.box {
+  color: #fff;
+  position: relative;
+}
+
+
+
+.box.arrow-right:after {
+  content: " ";
+  position: absolute;
+  left: 26px;
+  top: 200px;
+  rotate: 180deg;
+  border-top: 15px solid transparent;
+  border-right: none;
+  border-left: 15px solid black;
+  border-bottom: 15px solid transparent;
+}
+
+.box.arrow-left:after {
+  content: " ";
+  position: absolute;
+  right: 26px;
+  top: 200px;
+  border-top: 15px solid transparent;
+  border-right: none;
+  border-left: 15px solid black;
+  border-bottom: 15px solid transparent;
+}
+
+
+
+
+/* sdddds */
+
+
