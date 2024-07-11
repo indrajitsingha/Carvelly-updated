@@ -24,25 +24,25 @@ const ProtectedRoute = ({ children }) => {
         console.log("First useEffect called");
     }, []);
 
-    useEffect(() => {
-        if (session && Admins && !isDataLoading) {
-            const isAdmin = Admins.find(admin => admin?.Email === session?.user?.email);
-            console.log("second  useEffect called");
-            console.log(session, isAdmin, Admins);
-            if (isAdmin) {
-                dispatch(SigninUser({ ...isAdmin, ...session }));
-                navigate("/admin/");
-                console.log("Admin authenticated, redirecting to /admin/");
-                console.log(isAdmin);
-            } else {
-                supabase.auth.signOut();
-                dispatch(SignoutUser());
-                alert("You are not authorized to access this page.");
-                console.log("You are not authorized to access this page.");
-                navigate("/AdminLogin");
-            }
-        }
-    }, [Admins,isDataLoading, session]);
+    // useEffect(() => {
+    //     if (session && Admins && !isDataLoading) {
+    //         const isAdmin = Admins.find(admin => admin?.Email === session?.user?.email);
+    //         console.log("second  useEffect called");
+    //         console.log(session, isAdmin, Admins);
+    //         if (isAdmin) {
+    //             dispatch(SigninUser({ ...isAdmin, ...session }));
+    //             navigate("/admin/");
+    //             console.log("Admin authenticated, redirecting to /admin/");
+    //             console.log(isAdmin);
+    //         } else {
+    //             supabase.auth.signOut();
+    //             dispatch(SignoutUser());
+    //             alert("You are not authorized to access this page.");
+    //             console.log("You are not authorized to access this page.");
+    //             navigate("/AdminLogin");
+    //         }
+    //     }
+    // }, [Admins,isDataLoading, session]);
 
     return isAuthenticated() ? children : navigate("/AdminLogin");
 };
