@@ -15,12 +15,14 @@ const ProtectedRoute = ({ children }) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [session, setSession] = useState(null);
-
+const getauth=async()=>{
+    await supabase.auth.getSession().then(({ data: { session } }) => {
+        setSession(session);
+    });
+}
 
     useEffect(() => {
-        supabase.auth.getSession().then(({ data: { session } }) => {
-            setSession(session);
-        });
+        getauth()
         console.log("First useEffect called");
     }, []);
 
