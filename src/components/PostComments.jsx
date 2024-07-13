@@ -1,17 +1,24 @@
 import useAddMutation from "@/hooks/useAddMutation";
 import { useState } from "react"
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const PostComments = ({ CarId, refresh }) => {
+   const Navigate=useNavigate()
    const { user } = useSelector((data) => data.Auth)
    const { AddMutation } = useAddMutation({ tableName: "Comments" })
    const [Comment, setComment] = useState("")
    const date = new Date()
    const Submit = async () => {
-      let payload = { comment: Comment, commentDate: date, useremail: user?.user.email, carid: CarId }
-      await AddMutation(payload)
-      refresh()
-      setComment("")
+      if(user){
+         let payload = { comment: Comment, commentDate: date, useremail: user?.user.email, carid: CarId }
+         await AddMutation(payload)
+         refresh()
+         setComment("")
+      }else{
+         Navigate("/userlogin")
+      }
+      
    }
 
    return (

@@ -4,11 +4,17 @@ import { ThemeSupa } from '@supabase/auth-ui-shared'
 import supabase from '@/supabase/supabase';
 import { useNavigate } from "react-router-dom";
 import { CarFront } from "lucide-react";
+import { useDispatch } from "react-redux";
+import useNormalFetchData from "@/hooks/useNormalFetchData";
+import { SigninUser, SignoutUser } from "@/Redux/Slice/AutSlice";
 
 const AdminLogin = () => {
+  const { Data: Admins, isDataLoading } = useNormalFetchData({ tableName: "Admin" });
+  console.log(Admins);
+  const dispatch = useDispatch();
   const [session, setSession] = useState(null)
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
@@ -19,8 +25,32 @@ const AdminLogin = () => {
       setSession(session)
     })
     return () => subscription.unsubscribe()
-    
+
   }, [session])
+
+
+
+
+  useEffect(() => {
+    if (session && Admins && !isDataLoading) {
+      const isAdmin = Admins.find(admin => admin?.Email === session?.user?.email);
+      console.log("second  useEffect called");
+      console.log(session, isAdmin, Admins);
+      if (isAdmin) {
+        dispatch(SigninUser({ ...isAdmin, ...session }));
+        navigate("/admin/");
+        console.log("Admin authenticated, redirecting to /admin/");
+        console.log(isAdmin);
+      } else {
+        supabase.auth.signOut();
+        dispatch(SignoutUser());
+        alert("You are not authorized to access this page.");
+        console.log("You are not authorized to access this page.");
+        navigate("/AdminLogin");
+      }
+    }
+  }, [Admins, isDataLoading, session]);
+  
   if (!session) {
     return (
       <div className="flex items-center justify-center h-[100vh] bg-[#1A1A1A]  px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24">

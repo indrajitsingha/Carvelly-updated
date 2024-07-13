@@ -51,7 +51,8 @@ const carRoute = createBrowserRouter([
   { path: "/AdminLogin", element: <AdminLogin /> },
   {
     path: "/admin/",
-    element: <ProtectedRoute> <AdminNavbar /></ProtectedRoute>,
+    element: <AdminNavbar />,
+    // element: <ProtectedRoute> <AdminNavbar /></ProtectedRoute>,
     children: [
       { index: true, element: <AdminDashboard /> },
       { path: "addcar", element: <Addcar /> },

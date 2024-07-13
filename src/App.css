@@ -2,7 +2,10 @@ body::-webkit-scrollbar {
   display: none;
   overflow-x: hidden;
 }
-
+body{
+  width: 100%;
+  overflow-x: hidden;
+}
 a>.active {
   background-color: rgba(11, 180, 70, 0.982);
   padding: 10px 20px;
