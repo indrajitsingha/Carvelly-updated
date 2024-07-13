@@ -33,8 +33,8 @@ const AdminLogin = lazy(() => import("./admin/pages/AdminLogin"))
 const carRoute = createBrowserRouter([
   {
     path: "/",
-    // element: <ProtectedRouteUser><Navbar /></ProtectedRouteUser>,
-    element: <Navbar />,
+    element: <ProtectedRouteUser><Navbar /></ProtectedRouteUser>,
+    // element: <Navbar />,
     children: [
       { index: true, element: <Home /> },
       { path: "cars", element: <Cars /> },
