@@ -7,5 +7,5 @@ const isAuthenticated = () => {
 
 export const ProtectedRouteUser = ({ children }) => {
     const navigate = useNavigate();
-    return isAuthenticated() ? children : navigate("/userlogin");
+    return isAuthenticated() ? {children} : navigate("/userlogin");
 };
