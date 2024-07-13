@@ -1,21 +1,8 @@
 {
-    "rewrites": [
-      { "source": "/", "destination": "/" },
-      { "source": "/cars", "destination": "/" },
-      { "source": "/cars/:carID", "destination": "/" },
-      { "source": "/category", "destination": "/" },
-      { "source": "/Comparison", "destination": "/" },
-      { "source": "/Comparison/:carID1/:carID2", "destination": "/" },
-      { "source": "/calculator", "destination": "/" },
-      { "source": "/userlogin", "destination": "/" },
-      { "source": "/AdminLogin", "destination": "/" },
-      { "source": "/admin/", "destination": "/" },
-      { "source": "/admin/addcar", "destination": "/" },
-      { "source": "/admin/showcars", "destination": "/" },
-      { "source": "/admin/AddBrand", "destination": "/" },
-      { "source": "/admin/AddCategories", "destination": "/" },
-      { "source": "/admin/AddAdmin", "destination": "/" },
-      { "source": "/:path*", "destination": "/" }
+    "routes": [
+      {
+        "src": "/[^.]+",
+        "dest": "/"
+      }
     ]
   }
-  
