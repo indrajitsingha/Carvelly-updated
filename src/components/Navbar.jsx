@@ -62,7 +62,7 @@ const Navbar = () => {
     <div className="relative w-full ">
       <div className="mx-auto bg-black text-white  flex max-w-[100%] shadow-lg  items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <div className="inline-flex items-center space-x-2">
-          <img src="./src/assets/icon.png" alt="" className="fill-current h-14 mr-2 w-14 " />
+          <img src="https://ttjauaexcjjhtnygwhij.supabase.co/storage/v1/object/public/logo/icon.png" alt="" className="fill-current h-14 mr-2 w-14 " />
           <span className="font-bold text-xl tracking-tight  mt-4 ">
             Carvely
           </span>
@@ -97,7 +97,7 @@ const Navbar = () => {
               <div className="px-5 pb-6 pt-5">
                 <div className="flex items-center justify-between">
                   <div className="inline-flex items-center space-x-2">
-                    <img src="./src/assets/icon.png" alt="" className="fill-current h-14 mr-2 w-14 " />
+                    <img src="https://ttjauaexcjjhtnygwhij.supabase.co/storage/v1/object/public/logo/icon.png" alt="" className="fill-current h-14 mr-2 w-14 " />
                     <span className="font-bold text-xl tracking-tight text-black mt-4">
                       Carvely
                     </span>

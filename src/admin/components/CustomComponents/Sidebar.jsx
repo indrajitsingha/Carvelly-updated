@@ -56,7 +56,7 @@ const Sidebar = () => {
         <div className="space-y-4 relative py-4 flex flex-col h-full bg-[#111827] text-white">
             <div className="  px-3 py-2 flex-1">
                 <Link to="/dashboard" className="flex items-center pl-3 mb-14">
-                    <img src="../src/assets/icon.png" alt="" className="fill-current h-14 mr-2 w-14 " />
+                    <img src="https://ttjauaexcjjhtnygwhij.supabase.co/storage/v1/object/public/logo/icon.png" alt="" className="fill-current h-14 mr-2 w-14 " />
                     <h1 className={cn(" text-2xl font-bold mt-4")}>
                         Carvelly
                     </h1>
